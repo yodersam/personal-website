@@ -36,39 +36,67 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
-      <article className="max-w-3xl mx-auto px-6 py-16">
+    <div className="min-h-screen bg-background">
+      <article className="max-w-3xl mx-auto px-6 py-12">
         <Link
           href="/blog"
-          className="text-sm text-zinc-500 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors mb-8 inline-block"
+          className="group inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-accent transition-colors mb-8"
         >
-          ← Back to blog
+          <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+          Back to blog
         </Link>
 
-        <header className="mb-12">
-          <time className="text-sm text-zinc-500 dark:text-zinc-500">
-            {format(new Date(post.date), 'MMMM d, yyyy')}
-          </time>
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mt-2">
+        <header className="mb-12 pb-8 border-b border-[var(--border)]">
+          <div className="flex items-center gap-3 mb-4">
+            <time className="text-sm text-[var(--text-muted)]">
+              {format(new Date(post.date), 'MMMM d, yyyy')}
+            </time>
+            {post.tags && post.tags.length > 0 && (
+              <>
+                <span className="text-[var(--text-muted)]">·</span>
+                <div className="flex gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
             {post.title}
           </h1>
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex gap-2 mt-4">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          {post.excerpt && (
+            <p className="text-xl text-[var(--text-muted)] mt-4 leading-relaxed">
+              {post.excerpt}
+            </p>
           )}
         </header>
 
-        <div className="prose prose-zinc dark:prose-invert max-w-none">
+        <div className="prose prose-lg prose-zinc dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-[var(--text-muted)] prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-code:text-accent prose-code:bg-accent/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-surface prose-pre:border prose-pre:border-[var(--border)]">
           <MDXRemote source={post.content} />
         </div>
+
+        {/* Post footer */}
+        <footer className="mt-16 pt-8 border-t border-[var(--border)]">
+          <div className="flex items-center justify-between">
+            <Link
+              href="/blog"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-[var(--text-muted)] hover:text-accent transition-colors"
+            >
+              <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+              </svg>
+              All posts
+            </Link>
+          </div>
+        </footer>
       </article>
     </div>
   );

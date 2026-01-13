@@ -6,61 +6,111 @@ export default function Home() {
   const recentPosts = getAllPosts().slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
-      <div className="max-w-3xl mx-auto px-6 py-16">
-        <section className="mb-16">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
-            Hey, I'm Samuel
-          </h1>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Welcome to my creative space. I enjoy making things and exploring new ideas.
-            This is where I share my projects, thoughts, and whatever else I'm working on.
-          </p>
-        </section>
+    <div className="min-h-screen bg-background">
+      {/* Hero section with gradient background */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--gradient-start)] via-transparent to-[var(--gradient-end)] opacity-60" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent-light/5 rounded-full blur-3xl" />
 
-        <section>
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+        <div className="relative max-w-3xl mx-auto px-6 py-24">
+          <div className="space-y-6">
+            <p className="text-accent font-medium tracking-wide uppercase text-sm">
+              Welcome
+            </p>
+            <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-foreground">
+              Hey, I'm{' '}
+              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+                Samuel
+              </span>
+            </h1>
+            <p className="text-xl text-[var(--text-muted)] leading-relaxed max-w-xl">
+              Welcome to my creative space. I enjoy making things and exploring new ideas.
+              This is where I share my projects, thoughts, and whatever else I'm working on.
+            </p>
+            <div className="flex gap-4 pt-4">
+              <Link
+                href="/things"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/25"
+              >
+                See my work
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-surface text-foreground font-medium rounded-lg border border-border hover:bg-surface-hover hover:border-accent/30 transition-all"
+              >
+                About me
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recent posts section */}
+      <section className="max-w-3xl mx-auto px-6 py-16">
+        <div className="flex items-center justify-between mb-10">
+          <div>
+            <h2 className="text-2xl font-bold text-foreground">
               Recent Posts
             </h2>
-            <Link
-              href="/blog"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-            >
-              View all →
-            </Link>
+            <p className="text-[var(--text-muted)] mt-1">
+              Thoughts and ideas I've been exploring
+            </p>
           </div>
+          <Link
+            href="/blog"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors"
+          >
+            View all
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
 
-          {recentPosts.length === 0 ? (
-            <p className="text-zinc-500 dark:text-zinc-500 italic">
+        {recentPosts.length === 0 ? (
+          <div className="text-center py-12 bg-surface rounded-xl border border-border">
+            <p className="text-[var(--text-muted)] italic">
               No posts yet. Check back soon!
             </p>
-          ) : (
-            <ul className="space-y-6">
-              {recentPosts.map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="block group"
-                  >
-                    <time className="text-sm text-zinc-500 dark:text-zinc-500">
-                      {format(new Date(post.date), 'MMMM d, yyyy')}
-                    </time>
-                    <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-100 mt-1 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
-                      {post.title}
-                    </h3>
-                    {post.excerpt && (
-                      <p className="text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
-                        {post.excerpt}
-                      </p>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-      </div>
+          </div>
+        ) : (
+          <ul className="space-y-4">
+            {recentPosts.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="block group p-6 bg-surface rounded-xl border border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-2">
+                      <time className="text-sm text-[var(--text-muted)]">
+                        {format(new Date(post.date), 'MMMM d, yyyy')}
+                      </time>
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+                        {post.title}
+                      </h3>
+                      {post.excerpt && (
+                        <p className="text-[var(--text-muted)] line-clamp-2">
+                          {post.excerpt}
+                        </p>
+                      )}
+                    </div>
+                    <div className="shrink-0 mt-6 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
     </div>
   );
 }

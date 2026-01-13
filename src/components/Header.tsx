@@ -14,15 +14,20 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border)]">
       <nav className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+          className="group flex items-center gap-2"
         >
-          Samuel Yoder
+          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform">
+            S
+          </span>
+          <span className="text-lg font-semibold tracking-tight text-foreground group-hover:text-accent transition-colors">
+            Samuel Yoder
+          </span>
         </Link>
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center gap-1">
           {navItems.map((item) => {
             const isActive = pathname === item.href ||
               (item.href !== '/' && pathname.startsWith(item.href));
@@ -31,13 +36,16 @@ export default function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`text-sm transition-colors ${
+                  className={`relative px-4 py-2 text-sm rounded-lg transition-all ${
                     isActive
-                      ? 'text-zinc-900 dark:text-zinc-100 font-medium'
-                      : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
+                      ? 'text-accent font-medium bg-accent/10'
+                      : 'text-[var(--text-muted)] hover:text-foreground hover:bg-surface-hover'
                   }`}
                 >
                   {item.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent" />
+                  )}
                 </Link>
               </li>
             );
