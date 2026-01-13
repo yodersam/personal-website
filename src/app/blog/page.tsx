@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/posts';
 import { format } from 'date-fns';
 
 export const metadata = {
-  title: 'Blog | Sam Yoder',
+  title: 'Blog | Samuel Yoder',
   description: 'Thoughts, ideas, and creative explorations',
 };
 

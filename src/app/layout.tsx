@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sam Yoder",
+  title: "Samuel Yoder",
   description: "Creative work and thoughts",
 };
 

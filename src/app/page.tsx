@@ -10,7 +10,7 @@ export default function Home() {
       <div className="max-w-3xl mx-auto px-6 py-16">
         <section className="mb-16">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
-            Hey, I'm Sam
+            Hey, I'm Samuel
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Welcome to my creative space. I enjoy making things and exploring new ideas.

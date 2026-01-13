@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return {
-    title: `${post.title} | Sam Yoder`,
+    title: `${post.title} | Samuel Yoder`,
     description: post.excerpt,
   };
 }

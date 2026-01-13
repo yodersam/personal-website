@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'About | Sam Yoder',
+  title: 'About | Samuel Yoder',
   description: 'About me',
 };
 
@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div className="prose prose-zinc dark:prose-invert max-w-none">
           <p>
             {/* Add your intro here */}
-            Hello! I'm Sam. Welcome to my corner of the internet.
+            Hello! I'm Samuel. Welcome to my corner of the internet.
           </p>
 
           <h2>What I Do</h2>

@@ -19,7 +19,7 @@ export default function Header() {
           href="/"
           className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
         >
-          Sam Yoder
+          Samuel Yoder
         </Link>
         <ul className="flex items-center gap-6">
           {navItems.map((item) => {
