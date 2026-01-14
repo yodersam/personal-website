@@ -40,7 +40,7 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="max-w-3xl mx-auto px-6 py-12">
         <Link
           href="/blog"
-          className="group inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-accent transition-colors mb-8"
+          className="group inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors mb-8"
         >
           <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -48,14 +48,14 @@ export default async function BlogPostPage({ params }: Props) {
           Back to blog
         </Link>
 
-        <header className="mb-12 pb-8 border-b border-[var(--border)]">
+        <header className="mb-12 pb-8 border-b border-border">
           <div className="flex items-center gap-3 mb-4">
-            <time className="text-sm text-[var(--text-muted)]">
+            <time className="text-sm text-text-muted">
               {format(new Date(post.date), 'MMMM d, yyyy')}
             </time>
             {post.tags && post.tags.length > 0 && (
               <>
-                <span className="text-[var(--text-muted)]">·</span>
+                <span className="text-text-muted">·</span>
                 <div className="flex gap-2">
                   {post.tags.map((tag) => (
                     <span
@@ -73,22 +73,22 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
           {post.excerpt && (
-            <p className="text-xl text-[var(--text-muted)] mt-4 leading-relaxed">
+            <p className="text-xl text-text-muted mt-4 leading-relaxed">
               {post.excerpt}
             </p>
           )}
         </header>
 
-        <div className="prose prose-lg prose-zinc dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-[var(--text-muted)] prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-code:text-accent prose-code:bg-accent/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-surface prose-pre:border prose-pre:border-[var(--border)]">
+        <div className="prose prose-lg prose-zinc dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-text-muted prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-code:text-accent prose-code:bg-accent/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-surface prose-pre:border prose-pre:border-border">
           <MDXRemote source={post.content} />
         </div>
 
         {/* Post footer */}
-        <footer className="mt-16 pt-8 border-t border-[var(--border)]">
+        <footer className="mt-16 pt-8 border-t border-border">
           <div className="flex items-center justify-between">
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 text-sm font-medium text-[var(--text-muted)] hover:text-accent transition-colors"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-accent transition-colors"
             >
               <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

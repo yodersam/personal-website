@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Page header with avatar */}
-      <div className="border-b border-[var(--border)] bg-gradient-to-br from-[var(--gradient-start)] via-transparent to-[var(--gradient-end)]">
+      <div className="border-b border-border bg-gradient-to-br from-[var(--gradient-start)] via-transparent to-[var(--gradient-end)]">
         <div className="max-w-3xl mx-auto px-6 py-16">
           <div className="flex items-center gap-6">
             <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-white text-4xl font-bold shadow-lg shadow-accent/25">
@@ -17,7 +17,7 @@ export default function AboutPage() {
               <h1 className="text-4xl font-bold tracking-tight text-foreground">
                 About Me
               </h1>
-              <p className="text-lg text-[var(--text-muted)] mt-2">
+              <p className="text-lg text-text-muted mt-2">
                 Creator, maker, explorer of ideas
               </p>
             </div>
@@ -26,7 +26,7 @@ export default function AboutPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-lg prose-zinc dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-[var(--text-muted)] prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground">
+        <div className="prose prose-lg prose-zinc dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-text-muted prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground">
           <p className="text-xl leading-relaxed">
             Hello! I'm Samuel. Welcome to my corner of the internet.
           </p>
@@ -44,7 +44,7 @@ export default function AboutPage() {
           </p>
 
           <h2 className="flex items-center gap-3 !mt-12">
-            <span className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+            <span className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
@@ -58,7 +58,7 @@ export default function AboutPage() {
           </ul>
 
           <h2 className="flex items-center gap-3 !mt-12">
-            <span className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+            <span className="w-8 h-8 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -73,7 +73,7 @@ export default function AboutPage() {
           <div className="flex gap-4 mt-8 not-prose">
             <a
               href="#"
-              className="w-12 h-12 rounded-xl bg-surface border border-[var(--border)] flex items-center justify-center text-[var(--text-muted)] hover:text-accent hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
+              className="w-12 h-12 rounded-xl bg-surface border border-border flex items-center justify-center text-text-muted hover:text-accent hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
               aria-label="Twitter"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -82,7 +82,7 @@ export default function AboutPage() {
             </a>
             <a
               href="#"
-              className="w-12 h-12 rounded-xl bg-surface border border-[var(--border)] flex items-center justify-center text-[var(--text-muted)] hover:text-accent hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
+              className="w-12 h-12 rounded-xl bg-surface border border-border flex items-center justify-center text-text-muted hover:text-accent hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
               aria-label="GitHub"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </a>
             <a
               href="#"
-              className="w-12 h-12 rounded-xl bg-surface border border-[var(--border)] flex items-center justify-center text-[var(--text-muted)] hover:text-accent hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
+              className="w-12 h-12 rounded-xl bg-surface border border-border flex items-center justify-center text-text-muted hover:text-accent hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
               aria-label="LinkedIn"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

@@ -11,7 +11,8 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--gradient-start)] via-transparent to-[var(--gradient-end)] opacity-60" />
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent-light/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-secondary/5 rounded-full blur-3xl" />
 
         <div className="relative max-w-3xl mx-auto px-6 py-24">
           <div className="space-y-6">
@@ -24,7 +25,7 @@ export default function Home() {
                 Samuel
               </span>
             </h1>
-            <p className="text-xl text-[var(--text-muted)] leading-relaxed max-w-xl">
+            <p className="text-xl text-text-muted leading-relaxed max-w-xl">
               Welcome to my creative space. I enjoy making things and exploring new ideas.
               This is where I share my projects, thoughts, and whatever else I'm working on.
             </p>
@@ -40,7 +41,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-surface text-foreground font-medium rounded-lg border border-border hover:bg-surface-hover hover:border-accent/30 transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-surface text-foreground font-medium rounded-lg border border-border hover:bg-surface-hover hover:border-secondary/30 hover:text-secondary transition-all"
               >
                 About me
               </Link>
@@ -56,7 +57,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-foreground">
               Recent Posts
             </h2>
-            <p className="text-[var(--text-muted)] mt-1">
+            <p className="text-text-muted mt-1">
               Thoughts and ideas I've been exploring
             </p>
           </div>
@@ -73,7 +74,7 @@ export default function Home() {
 
         {recentPosts.length === 0 ? (
           <div className="text-center py-12 bg-surface rounded-xl border border-border">
-            <p className="text-[var(--text-muted)] italic">
+            <p className="text-text-muted italic">
               No posts yet. Check back soon!
             </p>
           </div>
@@ -87,14 +88,14 @@ export default function Home() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="space-y-2">
-                      <time className="text-sm text-[var(--text-muted)]">
+                      <time className="text-sm text-text-muted">
                         {format(new Date(post.date), 'MMMM d, yyyy')}
                       </time>
                       <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
                         {post.title}
                       </h3>
                       {post.excerpt && (
-                        <p className="text-[var(--text-muted)] line-clamp-2">
+                        <p className="text-text-muted line-clamp-2">
                           {post.excerpt}
                         </p>
                       )}

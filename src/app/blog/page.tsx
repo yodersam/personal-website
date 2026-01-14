@@ -13,12 +13,12 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Page header */}
-      <div className="border-b border-[var(--border)] bg-gradient-to-b from-[var(--gradient-start)] to-transparent">
+      <div className="border-b border-border bg-gradient-to-b from-[var(--gradient-start)] to-transparent">
         <div className="max-w-3xl mx-auto px-6 py-16">
           <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
             Blog
           </h1>
-          <p className="text-lg text-[var(--text-muted)]">
+          <p className="text-lg text-text-muted">
             Thoughts, ideas, and creative explorations.
           </p>
         </div>
@@ -26,13 +26,13 @@ export default function BlogPage() {
 
       <div className="max-w-3xl mx-auto px-6 py-12">
         {posts.length === 0 ? (
-          <div className="text-center py-16 bg-surface rounded-xl border border-[var(--border)]">
+          <div className="text-center py-16 bg-surface rounded-xl border border-border">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
               <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
               </svg>
             </div>
-            <p className="text-[var(--text-muted)]">
+            <p className="text-text-muted">
               No posts yet. Check back soon!
             </p>
           </div>
@@ -43,18 +43,18 @@ export default function BlogPage() {
                 <article className="group">
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="block p-6 bg-surface rounded-xl border border-[var(--border)] hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
+                    className="block p-6 bg-surface rounded-xl border border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="space-y-2 flex-1">
-                        <time className="text-sm text-[var(--text-muted)]">
+                        <time className="text-sm text-text-muted">
                           {format(new Date(post.date), 'MMMM d, yyyy')}
                         </time>
                         <h2 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
                           {post.title}
                         </h2>
                         {post.excerpt && (
-                          <p className="text-[var(--text-muted)] line-clamp-2">
+                          <p className="text-text-muted line-clamp-2">
                             {post.excerpt}
                           </p>
                         )}

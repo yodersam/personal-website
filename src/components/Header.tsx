@@ -14,7 +14,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border)]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
@@ -39,7 +39,7 @@ export default function Header() {
                   className={`relative px-4 py-2 text-sm rounded-lg transition-all ${
                     isActive
                       ? 'text-accent font-medium bg-accent/10'
-                      : 'text-[var(--text-muted)] hover:text-foreground hover:bg-surface-hover'
+                      : 'text-text-muted hover:text-foreground hover:bg-surface-hover'
                   }`}
                 >
                   {item.label}

@@ -48,12 +48,12 @@ export default function ThingsPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Page header */}
-      <div className="border-b border-[var(--border)] bg-gradient-to-b from-[var(--gradient-end)] to-transparent">
+      <div className="border-b border-border bg-gradient-to-b from-[var(--gradient-end)] to-transparent">
         <div className="max-w-3xl mx-auto px-6 py-16">
           <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
             Things
           </h1>
-          <p className="text-lg text-[var(--text-muted)]">
+          <p className="text-lg text-text-muted">
             Projects, music, writing, and other creative work.
           </p>
         </div>
@@ -61,13 +61,13 @@ export default function ThingsPage() {
 
       <div className="max-w-3xl mx-auto px-6 py-12">
         {things.length === 0 ? (
-          <div className="text-center py-16 bg-surface rounded-xl border border-[var(--border)]">
+          <div className="text-center py-16 bg-surface rounded-xl border border-border">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
               <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
             </div>
-            <p className="text-[var(--text-muted)]">
+            <p className="text-text-muted">
               Nothing here yet. Check back soon!
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function ThingsPage() {
                   <h2 className="text-xl font-bold text-foreground capitalize">
                     {type}
                   </h2>
-                  <span className="text-sm text-[var(--text-muted)] bg-surface-hover px-2 py-0.5 rounded-full">
+                  <span className="text-sm text-text-muted bg-surface-hover px-2 py-0.5 rounded-full">
                     {thingsByType[type].length}
                   </span>
                 </div>
@@ -91,7 +91,7 @@ export default function ThingsPage() {
                     <li key={thing.slug}>
                       <Link
                         href={`/things/${thing.slug}`}
-                        className="block group p-5 bg-surface rounded-xl border border-[var(--border)] hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
+                        className="block group p-5 bg-surface rounded-xl border border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all"
                       >
                         <div className="flex items-start justify-between gap-4">
                           <div className="space-y-2 flex-1">
@@ -99,7 +99,7 @@ export default function ThingsPage() {
                               {thing.title}
                             </h3>
                             {thing.description && (
-                              <p className="text-[var(--text-muted)]">
+                              <p className="text-text-muted">
                                 {thing.description}
                               </p>
                             )}
